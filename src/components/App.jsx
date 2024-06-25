@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef, useMemo } from "react";
-import Scoreboard from "./Scoreboard";
+import { useEffect, useMemo, useRef, useState } from "react";
 import DifficultySelector from "./DifficultySelector";
-import Game from './Game'
+import Game from './Game';
+import Scoreboard from "./Scoreboard";
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -9,8 +9,8 @@ function App() {
   const [difficulty, setDifficulty] = useState('');
 
   const scoreToWin = useMemo(() => {
-    let limit;
-    if (difficulty === 'easy') {
+  let limit;
+  if (difficulty === 'easy') {
     limit = 3; 
   } else if (difficulty === 'medium') {
     limit = 5;
@@ -49,11 +49,10 @@ function App() {
               difficulty={difficulty}
               updateScore={updateScore}
               onLose={onLose}
+              restartGame={restartGame}
             />
           : <p>you win</p>
       }
-      <button onClick={() => restartGame()}>restart</button>
-
     </>
   )
   
