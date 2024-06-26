@@ -70,7 +70,7 @@ function animateCard(e) {
   const [centerX, centerY] = [cardWidth/2, cardHeight/2];
   const xRelToCenter = x - centerX;
   const YRelToCenter = y - centerY;
-  const rotateYAngle = xRelToCenter/centerX * -35;
+  const rotateYAngle = xRelToCenter/centerX * 35;
   const rotateXAngle = YRelToCenter/centerY * -20;
 
   return [rotateYAngle, rotateXAngle];
