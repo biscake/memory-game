@@ -1,3 +1,4 @@
 .scoreboard {
   grid-area: Score;
+  padding-top: 2rem;
 }

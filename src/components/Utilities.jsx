@@ -60,4 +60,20 @@ function cardRandomizer(arr, selected, difficulty) {
   }
 }
 
-export {getRandomCardIds, cardRandomizer}
+function animateCard(e) {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const cardWidth = rect.width;
+  const cardHeight = rect.height;
+  const x = e.clientX - rect.left; 
+  const y = e.clientY - rect.top;
+
+  const [centerX, centerY] = [cardWidth/2, cardHeight/2];
+  const xRelToCenter = x - centerX;
+  const YRelToCenter = y - centerY;
+  const rotateYAngle = xRelToCenter/centerX * -35;
+  const rotateXAngle = YRelToCenter/centerY * -20;
+
+  return [rotateYAngle, rotateXAngle];
+}
+
+export {getRandomCardIds, cardRandomizer, animateCard}

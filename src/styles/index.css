@@ -50,14 +50,49 @@ table {
 
 /* RESET */ 
 
+:root {
+	--font-color: black;
+	--bg-color: white;
+}
+
+#root.dark {
+	--font-color: beige;
+	--bg-color: rgb(92, 92, 92);
+}
+
 #root {
   display: grid;
   height: 100vh;
-  max-width: 100vw;
   grid-template-rows: 1fr 5fr;
   grid-template-columns: 5fr 1fr;
   grid-template-areas: 
   "Heading Score"
   "App App";
+
+	color: var(--font-color);
+	background-color: var(--bg-color);
 }
 
+.header {
+	padding: 2rem;
+	color: inherit;
+	grid-area: Heading;
+}
+
+.header > button:nth-child(1) {
+	color: inherit;
+	font-size: 4rem;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+
+.header > button:hover {
+	transform: scale(1.1) skew(-7deg);
+	text-shadow: 2px 2px beige;
+}
+
+.header > p {
+	margin-top: 1rem;
+}

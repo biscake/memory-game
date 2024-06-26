@@ -2,6 +2,8 @@
 .game {
   grid-area: App;
   place-self: center;
+  width: 100%;
+  text-align: center;
 }
 
 .difficultySelector {
@@ -42,5 +44,74 @@
     visibility: visible;
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 5rem;
+  padding: 5rem;
+  min-width: 300px;
+  animation: animateShowCards 0.5s ease-out forwards;
+}
+
+.cards .hide {
+  opacity: 0;
+}
+
+.card {
+  perspective: 500px;
+}
+
+.card button {
+  cursor: pointer;
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 1rem;
+  transition: transform 0.5s ease-out;
+  transform-origin: center;
+}
+
+.card img {
+  width: 80%;
+  height: 80%;
+  min-width: 200px;
+  aspect-ratio: 1/1;
+}
+
+.restartBtn {
+  width: min-content;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+@keyframes animateShowCards {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animateHideCards {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
